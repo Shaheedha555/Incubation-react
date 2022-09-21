@@ -65,7 +65,7 @@ function Register() {
 
                         {errors.password && <p className='error'>{errors.password.message}</p>}
 
-                        <input type="text" placeholder='confirm password' {...register("confirm", {
+                        <input type="password" placeholder='confirm password' {...register("confirm", {
                             required: "password is required",
                             validate: (value) =>
                                 value === password.current || "Password do not match"

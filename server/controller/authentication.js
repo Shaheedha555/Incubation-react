@@ -15,6 +15,7 @@ module.exports = {
         if (sameEmail) {
             throw Error("Email already exist ")
         } else {
+            console.log(process.env.SECRET_TOKEN);
             const user = await userModel.create({ name, email, password: crypt })
             const token = jwt.sign({ userId: user._id }, process.env.SECRET_TOKEN, { expiresIn: maxAge })
             res.cookie("jwt", token, {
@@ -29,6 +30,8 @@ module.exports = {
 
     login: asyncWrapper(async (req, res) => {
         const { email, password } = req.body
+        console.log(process.env.SECRET_TOKEN);
+
         const user = await userModel.findOne({ email: email })
         if (user.status) {
             throw Error('User is blocked ')

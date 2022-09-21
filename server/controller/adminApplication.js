@@ -23,6 +23,7 @@ module.exports = {
     }),
 
     getAllSlots: asyncWrapper(async (req, res) => {
+       
         const slots = await slotModel.find({})
         res.status(200).json({ status: true, slots: slots })
     }),

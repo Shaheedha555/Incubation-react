@@ -47,7 +47,7 @@ function Login() {
                             pattern:  { value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, message: "Enter a valid email" }
                         })} />
                         {errors.email && <p className='error'>{errors.email.message}</p>}
-                        <input type="text" placeholder='password' {...register("password", { required: { value: true, message: "Password required" }, minLength: { value: 8, message: "Password should be 8 characters long" } })} />
+                        <input type="password" placeholder='password' {...register("password", { required: { value: true, message: "Password required" }, minLength: { value: 8, message: "Password should be 8 characters long" } })} />
                         {errors.password && <p className='error'>{errors.password.message}</p>}
                         <button className='btn'> Submit </button>
                         <p style={{ opacity: '.6' }}><a href='/register'>Register</a></p>

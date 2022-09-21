@@ -53,14 +53,19 @@ function LinearProgressWithLabel(props) {
 
   }
   return (
+    <div style={{margin:"25px"}}>
+
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
       <Box sx={{ width: '100%', mr: 1 }}>
         <LinearProgress variant="determinate" value={progress} color={bgcolor} />
       </Box>
+        <br />
+      
       <Box sx={{ minWidth: 35 }}>
         <Typography variant="body2" color="text.secondary">{text}</Typography>
       </Box>
     </Box>
+    </div>
   );
 }
 
@@ -106,7 +111,7 @@ function Home() {
     <React.Fragment>
       <CardContent>
         <Typography variant="h2" component="div">
-          Welcome
+          Welcome 
         </Typography>
         <Typography variant="h4" sx={{ mb: 1.5, fontFamily: 'serif' }} color="text.secondary">
           {user.name}

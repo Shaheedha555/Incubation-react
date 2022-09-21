@@ -80,9 +80,11 @@ export default function Slot() {
             }
         }
         slots()
-        getApproved()
     }, [application, toast])
+    useEffect(()=>{
+        getApproved()
 
+    },[])
     function changeCompany(id) {
         setCompany(id)
     }
@@ -113,6 +115,7 @@ export default function Slot() {
 
     return (
         <section>
+            <h1>slot</h1>
             <Box sx={{ flexGrow: 1, marginTop: '4px' }}>
                 <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 12, md: 12 }}>
                     {sectionA.map((item, index) => (
